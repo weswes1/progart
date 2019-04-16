@@ -25,7 +25,7 @@ for i in range(0,m):
 # # # # # # # # # # # # # # # # # # # # # # # # 
 
 
-# JD's loop using 
+# JD's loop using probability density functions, the CDF, and a random variable
 x_0 = 78
 y_0 = 41
 d = 75
@@ -37,8 +37,45 @@ for i in range(0,10000):
 	x = int(x_0+r*math.cos(th))
 	y = int(y_0+r*math.sin(th))
 
-	if (x>= 0 and x<500 and  y>=0 and y<500):
+	if (x>= 0 and x<500 and  y >= 0 and y < 500):
 		image[int(x),int(y)]=[1,1,0]
+
+
+
+
+# carpeting in bottom left hand corner of the screen 
+
+for i in range(0,37):
+	for j in range(0,446):
+			image[495-i,18+i+j]=[1,.5,.1]
+
+# Carpeting design -- looping for center of circle A to center of circle B etcetera
+# 469, 58 
+"""
+for j in range(0,45):
+	for i in range(0,4):
+		centerx = 469+10*i
+		centery = 55+10*j
+		for pix in range(5-centerx,5+centerx):
+			for nutherpix in range(5-centery,5+centery):
+				if (math.floor(math.pow((centery-pix)**2+(centerx-nutherpix)**2,.5)) < 5 ):
+					image[pix,nutherpix]=[0,0,0]
+				else:
+					pass
+"""
+
+
+# Creating some depth in the portrait
+
+for z in range(0,3):
+	for i in range(0,50):
+		for i in range(0,50):
+			image[499-i,i+z]=[0,0,0]
+
+for z in range(0,3):
+	for i in range(0,450):
+		image[451-i,49+z]=[0,0,0]
+		image[451+z,49+i]=[0,0,0]
 
 
 
@@ -56,6 +93,33 @@ for i in range(300,500):
 		image[i,col]=[0,0,.140]
 		image[i,col-193]=[0,0,.140]
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+
+## Boarder for the flower portrait ##
+#####################################
+
+
+for i in range(55,125):
+	for j in range(405,475):
+		image[i,j]=[.5,0,0]
+
+		
+for i in range(20,100):
+	image[30+i,400]=[1,1,1]
+	image[30+i,480]=[1,1,1]
+	image[130,380+i]=[1,1,1]
+	image[50,380+i]=[1,1,1]
+
+for i in range(20,100):
+	image[30+i,405]=[1,1,1]
+	image[30+i,475]=[1,1,1]
+	image[125,380+i]=[1,1,1]
+	image[55,380+i]=[1,1,1]
+
+for j in range(0,30):
+	for i in range(0,5):
+		image[123-j,440+i]=[0.3,0,0.8]
+#####################################
 
 
 # Creates the button pattern for the man's frock
@@ -161,9 +225,6 @@ for i in range(0,4):
 		image[103+i,203+j]=[0,0,0]
 
 
-
-
-
 # Eyebrows
 for l in range(0,2):
 	for x in range(0,18):
@@ -216,8 +277,7 @@ for i in range(0,5):
 		image[180+i,280+j]=[0,0,0]
 
 
-# col start at 278
-# row starts at 
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 
@@ -239,29 +299,6 @@ for i in range(0,7):
 
 
 
-## Making the Flower portrait in the back right corner of the screen ##
-
-
-
-for i in range(20,100):
-	image[30+i,400]=[1,1,1]
-	image[30+i,480]=[1,1,1]
-	image[130,380+i]=[1,1,1]
-	image[50,380+i]=[1,1,1]
-
-for i in range(20,100):
-	image[30+i,405]=[1,1,1]
-	image[30+i,475]=[1,1,1]
-	image[125,380+i]=[1,1,1]
-	image[55,380+i]=[1,1,1]
-
-for i in range(55,125):
-	for j in range(405,475):
-		image[i,j]=[0,0.5,0.5]
-
-for j in range(0,30):
-	for i in range(0,5):
-		image[123-j,440+i]=[0.3,0,0.8]
 
 
 # Rose petals
@@ -305,7 +342,12 @@ while count <= 40:
 	level+=1;
 	count+=2;
 
-	
+
+# Coloring the glass of the lantern
+
+for i in range(60,130):
+	for j in range(15,75):
+		image[i,j]=[0,0,1]
 
 
 # Making a chain for the lanter lantern
@@ -355,19 +397,213 @@ for x in range(0,3):
 
 
 # Lantern glass effect
+
 for z in range(0,5):
 	for i in range(0,10):
-		for j in range(0,20):
-			image[129-z-i,13+j]=[0,0,0]
-			image[129-z-i,75-j]=[0,0,0]
-			image[58+z+i,13+j]=[0,0,0]
-			image[58+z+i,75-j]=[0,0,0]
+			image[129-z-i,13+i]=[0,0,0]
+			image[129-z-i,75-i]=[0,0,0]
+			image[58+z+i,13+i]=[0,0,0]
+			image[58+z+i,75-i]=[0,0,0]
+
+for i in range(0,55):
+	for j in range(0,4):
+		image[120-i,20+j]=[0,0,0]
+		image[120-i,65+j]=[0,0,0]
+
+for i in range(0,45):
+	for j in range(0,4):
+		image[67+j,65-i]=[0,0,0]
+		image[117+j,65-i]=[0,0,0]
 
 
 
-gaussianBlur = skimage.filters.gaussian(image,sigma=2)
-plt.imshow(gaussianBlur, interpolation='nearest')
-plt.show()
 
-#plt.imshow(image, interpolation='nearest')
+
+# Second painting-- Oranges ##################################### ##################################### #####################################
+
+for i in range(20,80):
+	image[130+i,390]=[1,1,1]
+	image[130+i,450]=[1,1,1]
+	image[210,370+i]=[1,1,1]
+	image[150,370+i]=[1,1,1]
+
+for i in range(20,80):
+	image[130+i,395]=[1,1,1]
+	image[130+i,445]=[1,1,1]
+	image[205,370+i]=[1,1,1]
+	image[155,370+i]=[1,1,1]
+
+for i in range(157,204):
+	for j in range(396,445):
+		image[i,j]=[0,.2,.5]
+
+
+for i in range(160,195):
+	for j in range(400,435):
+		image[i,j]=[0,0,0]
+
+
+for i in range(163,192):
+	for j in range(401,432):
+		image[i,j]=[1,1,0]
+
+
+for z in range(0,2):
+	for i in range(0,5):
+		image[195+i+z,400+i]=[0,0,0]
+		image[195+i+z,434+i]=[0,0,0]
+		image[195+i+z,434+i]=[0,0,0]
+		image[160+i+z,434+i]=[0,0,0]
+
+
+
+# Flower patterns
+coljump = 0
+
+while coljump<=28:
+	rowjump = 0
+	while rowjump <=20:
+		for i in range(0,3):
+			image[167+rowjump,404+i+coljump]=[0,rowjump/20,.5]
+			image[167-i+rowjump,404-i+coljump]=[0,.5,.5]
+			image[167-i+rowjump,404+i+coljump]=[rowjump/20,.5,.5]
+			image[167+i+rowjump,404-i+coljump]=[0,.5,.5]
+			image[167+rowjump,404-i+coljump]=[0,.5,.5]
+			image[167+i+rowjump,404+coljump]=[rowjump/20,.5,.5]
+			image[167-i+rowjump,404+coljump]=[0,.5,rowjump/20]
+			image[167+i+rowjump,404+i+coljump]=[0,.5,rowjump/20]
+		rowjump+=10
+	coljump+=8
+
+
+
+
+
+
+
+
+
+for z in range(0,2):
+	for i in range(0,5):
+		image[i,z]=[0,.3,.2]
+
+
+# Center of the triangle is (420,179)
+
+# If distance from pixel to (420,179) is less than radius, not filled
+
+
+for i in range(157,204):
+	for j in range(396,445):
+		if (math.pow((420-j)**2+(179-i)**2,.5) < 4 ):
+			image[i,j]=[1,.3,0]
+		if (math.floor(math.pow((420-j)**2+(179-i)**2,.5)) == 4 ):
+			image[i,j]=[0,0,0]
+		else:
+			pass
+
+for i in range(157,204):
+	for j in range(396,445):
+		if (math.pow((420-j)**2+(179-i)**2,.5) < 4 ):
+			image[i+4,j+3]=[1,.3,0]
+		if (math.floor(math.pow((420-j)**2+(179-i)**2,.5)) == 4 ):
+			image[i+4,j+3]=[0,0,0]
+		else:
+			pass
+
+for i in range(157,204):
+	for j in range(396,445):
+		if (math.pow((420-j)**2+(179-i)**2,.5) < 4 ):
+			image[i+3,j-3]=[1,.3,0]
+		if (math.floor(math.pow((420-j)**2+(179-i)**2,.5)) == 4 ):
+			image[i+3,j-3]=[0,0,0]
+		else:
+			pass
+
+# White cat in the bottom right corner of the painting 
+
+
+
+# center of the circle is (460,460)
+
+for i in range(430,490):
+	for j in range(430,490):
+		if (math.pow((460-j)**2+(460-i)**2,.5) < 23 ):
+			image[i+3,j-3]=[1,1,1]
+		if (math.floor(math.pow((460-j)**2+(460-i)**2,.5)) == 23 ):
+			image[i+3,j-3]=[0,0,0]
+		else:
+			pass
+
+
+
+for i in range(430,490):
+	for j in range(430,490):
+		if (math.pow((443-j)**2+(478-i)**2,.5) < 6 ):
+			image[i+3,j-3]=[1,1,1]
+		if (math.floor(math.pow((443-j)**2+(478-i)**2,.5)) == 6 ):
+			image[i+3,j-3]=[0,0,0]
+		else:
+			pass
+
+
+
+for i in range(430,490):
+	for j in range(430,490):
+		if (math.pow((460-j)**2+(460-i)**2,.5) < 6 ):
+			image[i+12,j+20]=[1,1,1]
+		if (math.floor(math.pow((460-j)**2+(460-i)**2,.5)) == 6 ):
+			image[i+12,j+20]=[0,0,0]
+		else:
+			pass
+
+
+
+for i in range(430,490):
+	for j in range(430,490):
+		if (math.pow((460-j)**2+(460-i)**2,.5) < 13 ):
+			image[i-15,j-3]=[1,1,1]
+		if (math.floor(math.pow((460-j)**2+(460-i)**2,.5)) == 13 ):
+			image[i-15,j-3]=[0,0,0]
+		else:
+			pass
+
+# Cat ears
+
+for i in range(0,4):
+	image[432-i,464-i]=[1,1,1]
+	image[432-i,451+i]=[1,1,1]
+	image[429+i,461-i]=[1,1,1]
+	image[430+i,455+i]=[1,1,1]
+
+
+
+for i in range(0,2):
+	image[442-i,464-i]=[0,0,0]
+	image[442-i,451+i]=[0,0,0]
+	image[441+i,462-i]=[0,0,0]
+	image[441+i,453+i]=[0,0,0]
+
+for i in range(0,2):
+	for j in range(0,2):
+		image[450+i,456+j]=[0,0,0]
+
+for z in range(0,3):
+	for i in range(0,7):
+		if i%2==0:
+			image[458-i-z,478+i] = [1,1,1]
+			image[451+i-z,484+i]=[1,1,1]
+		else:
+			image[458-i-z,478+i] = [0,1,0]
+			image[4+i-z,484+i]=[0,1,0]
+
+
+
+
+#gaussianBlur = skimage.filters.gaussian(image,sigma=0.75)
+#plt.imshow(gaussianBlur, interpolation='nearest')
 #plt.show()
+
+
+plt.imshow(image, interpolation='nearest')
+plt.show()
