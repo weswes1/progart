@@ -12,10 +12,11 @@ import skimage
 
 image = np.zeros((500,500,3))
 
+
 m = image.shape[0] # Rows
 n = image.shape[1] # Columns
 
-
+[.210,.180,.140]
 # Create the background color. it will be light brown.
 
 # # # # # # # # # # # # # # # # # # # # # # # #  
@@ -47,22 +48,72 @@ for i in range(0,10000):
 
 for i in range(0,37):
 	for j in range(0,446):
-			image[495-i,18+i+j]=[1,.5,.1]
+			image[495-i,18+i+j]=[1,0,0]
 
 # Carpeting design -- looping for center of circle A to center of circle B etcetera
 # 469, 58 
-"""
-for j in range(0,45):
-	for i in range(0,4):
-		centerx = 469+10*i
-		centery = 55+10*j
-		for pix in range(5-centerx,5+centerx):
-			for nutherpix in range(5-centery,5+centery):
-				if (math.floor(math.pow((centery-pix)**2+(centerx-nutherpix)**2,.5)) < 5 ):
-					image[pix,nutherpix]=[0,0,0]
-				else:
-					pass
-"""
+
+	for j in range(0,40):
+		for i in range(0,3):
+
+			centerx = 469+10*i
+			centery = 55+10*j
+
+			for pix in range(centerx-5,5+centerx):
+				for nutherpix in range(centery-5,5+centery):
+					if (math.floor(math.pow((centerx-pix)**2+(centery-nutherpix)**2,.5)) < 5 ):
+						image[pix-2,nutherpix+4]=[1,0,0]
+					else:
+						pass
+
+
+	for j in range(0,40):
+		for i in range(0,3):
+
+			centerx = 469+10*i
+			centery = 55+10*j
+
+			for pix in range(centerx-5,5+centerx):
+				for nutherpix in range(centery-5,5+centery):
+					if (math.floor(math.pow((centerx-pix)**2+(centery-nutherpix)**2,.5)) < 4 ):
+						image[pix-2,nutherpix+4]=[0,1,0]
+					else:
+						pass
+
+	for j in range(0,40):
+		for i in range(0,3):
+
+			centerx = 469+10*i
+			centery = 55+10*j
+
+			for pix in range(centerx-5,5+centerx):
+				for nutherpix in range(centery-5,5+centery):
+					if (math.floor(math.pow((centerx-pix)**2+(centery-nutherpix)**2,.5)) < 3 ):
+						image[pix-2,nutherpix+4]=[0,0,1]
+					else:
+						pass
+
+	for j in range(0,40):
+		for i in range(0,3):
+			centerx = 469+10*i
+			centery = 55+10*j
+
+			for pix in range(centerx-5,5+centerx):
+				for nutherpix in range(centery-5,5+centery):
+					if (math.floor(math.pow((centerx-pix)**2+(centery-nutherpix)**2,.5)) < 2 ):
+						image[pix-2,nutherpix+4]=[0,0,0]
+					else:
+						pass
+
+for i in range(0,37):
+	for j in range(0,3):
+			image[495-i,i+20+2*j]=[0,0,0]
+			image[495-i,462+i-2*j]=[0,0,0]
+
+for i in range(0,20):
+	for j in range(0,3):
+			image[495-i,30+2*j+i]=[0,0,1]
+			image[495-i,420+30+2*j+i]=[0,0,1]
 
 
 # Creating some depth in the portrait
@@ -83,7 +134,7 @@ for z in range(0,3):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 for i in range(220,500):
 	for j in range(90,430):
-		image[i,j]=[0,0,0]
+		image[i,j]=[.1,.1,.1]
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 # Creating the arm sleaves
@@ -177,8 +228,6 @@ while colstart < 250 :
 		image[126-rowstart+random.randint(-10,10),122+colstart+random.randint(-2,2)]=[0,0,0]
 	rowstart-=1
 	colstart+=1
-
-
 for row in range(0,75):
 	for t in range(-1,guh):
 		image[row+random.randint(-10,10),250-row+2*t+random.randint(-10,10)] = [0,0,0]
@@ -186,21 +235,233 @@ for row in range(0,75):
 	guh+=1
 
 
-############################################ 
-# Working on the EYES
+
+# Japanese Kanji for DANCE/MAI
+
+#####
+for i in range(0,75):
+	for j in range(0,50):
+		image[i+10,95+j]=[.95,.95,.8]
+####
+
+
+
+###########################################
+##
+for i in range(0,5):
+	image[17-i,107+i]=[0,0,0]
+for i in range(0,5):
+	image[26-i,107+i]=[0,0,0]
+for i in range(0,7):
+	image[30-i,109+i]=[0,0,0]
+for i in range(0,3):
+	image[24+i,111+i]=[0,0,0]
+###
+
+
+###
+
+for i in range(0,15):
+	image[23,110+i]=[0,0,0]
+
+for i in range(0,10):
+	image[26,116+i]=[0,0,0]
+###
+
+
+
+for i in range(0,3):
+	image[23+i,118]=[0,0,0]
+
+for i in range(0,8):
+	image[21+i,121]=[0,0,0]
+
+for z in range(0,4):
+	for i in range(0,7):
+		image[15+i,112+3*z]=[0,0,0]
 
 
 
 
+#####
+# Math Kanji
 
-##########################################
+
+for i in range(0,5):
+	image[38+i,107]=[0,0,0]
+	image[40,105+i]=[0,0,0]
+	image[45,105+i]=[0,0,0]
+
+for i in range(0,5):
+	image[42-i,105+i]=[0,0,0]
+	image[42-i,109-i]=[0,0,0]
+
+for i in range(0,5):
+	image[45+i,109-i]=[0,0,0]
+
+
+for i in range(0,3):
+	image[45+i,107-i]=[0,0,0]
+
+image[48,108]=[0,0,0]
+image[44,107]=[0,0,0]
+
+for i in range(0,6):
+	image[43-i,111+i]=[0,0,0]
+
+for i in range(0,6):
+	image[41,113+i]=[0,0,0]
+
+for i in range(0,7):
+	image[41+i,113+i]=[0,0,0]
+
+for i in range(0,8):
+	image[41+i,117-i]=[0,0,0]
+
 
 
 
 for i in range(0,10):
+	image[40,120+i]=[0,0,0]
+	image[45,120+i]=[0,0,0]
+
+for i in range(0,6):
+	image[42,122+i]=[0,0,0]
+
+for i in range(0,3):
+	image[48,122+i]=[0,0,0]
+
+for i in range(0,5):
+	image[48-i,124]=[0,0,0]
+
+image[41,120]=[0,0,0]
+image[41,129]=[0,0,0]
+
+for i in range(0,3):
+	image[44-i,124+i]=[0,0,0]
+
+
+for i in range(0,3):
+	image[40-i,127+i]=[0,0,0]
+
+for i in range(0,3):
+	image[40-i,126-i]=[0,0,0]
+
+
+for i in range(0,3):
+	image[40-i,123-i]=[0,0,0]
+
+
+##############################
+# Music Kanji
+##############################
+
+image[59,110]=[0,0,0]
+
+for i in range(0,10):
+	image[60,106+i]=[0,0,0]
+for i in range(0,12):
+	image[63,105+i]=[0,0,0]
+for i in range(0,8):
+	image[65,107+i]=[0,0,0]
+for i in range(0,8):
+	image[67,107+i]=[0,0,0]
+
+for i in range(0,8):
+	image[69,107+i]=[0,0,0]
+
+for j in range(0,6):
+	image[65+j,107]=[0,0,0]
+	image[65+j,114]=[0,0,0]
+
+for i in range(0,4):
+	image[63-i,110-i]=[0,0,0]
+	image[63-i,111+i]=[0,0,0]
+
+###############################
+
+
+
+for i in range(0,10):
+	image[60,106+i]=[0,0,0]
+for i in range(0,12):
+	image[63,105+i]=[0,0,0]
+for i in range(0,8):
+	image[65,107+i]=[0,0,0]
+for i in range(0,8):
+	image[67,107+i]=[0,0,0]
+
+
+
+for i in range(0,6):
+	image[60,122+i]=[0,0,0]
+for i in range(0,6):
+	image[62,122+i]=[0,0,0]
+for i in range(0,6):
+	image[64,122+i]=[0,0,0]
+
+for i in range(0,6):
+	image[64,122+i]=[0,0,0]
+
+for j in range(0,5):
+	image[60+j,122]=[0,0,0]
+	image[60+j,127]=[0,0,0]
+
+for j in range(0,5):
+	image[66+j,124]=[0,0,0]
+
+for j in range(0,10):
+	image[67,120+j]=[0,0,0]
+
+for i in range(0,5):
+	image[67+i,124-i]=[0,0,0]
+	image[67+i,124+i]=[0,0,0]
+
+
+for i in range(0,3):
+	image[62+i,129+i]=[0,0,0]
+	image[62-i,129+i]=[0,0,0]
+
+for i in range(0,3):
+	image[62+i,120-i]=[0,0,0]
+	image[62-i,120-i]=[0,0,0]
+
+
+
+
+
+
+for i in range(15,30):
+	image[15,95+i]=[0,0,0]
+	image[21,95+i]=[0,0,0]
+
+for i in range(13,32):
+	image[18,93+i]=[0,0,0]
+
+
+
+
+################################
+################################
+################################
+################################
+################################
+################################
+################################
+################################
+
+
+
+
+
+
+# Working on the EYES
+
+
+for i in range(0,10):
 	for j in range(0,10):
-		image[100+i,200+j]=[0,0,255]
-		image[100+i,300+j]=[0,0,255]
+		image[100+i,200+j]=[.210,.180,.140]
+		image[100+i,300+j]=[.210,.180,.140]
 
 
 for i in range(0,10):
@@ -310,7 +571,6 @@ level = 0;
 
 
 while count <= 40:
-	print(int(math.ceil(count/2)))
 	for index in range(0,int(math.ceil(count/2))):
 			image[level+60,442+index]=[.8**count,.5**index,03]
 			image[level+60,442-index]=[0,.180,.5**index]
@@ -347,7 +607,7 @@ while count <= 40:
 
 for i in range(60,130):
 	for j in range(15,75):
-		image[i,j]=[0,0,1]
+		image[i,j]=[0,.4,1]
 
 
 # Making a chain for the lanter lantern
@@ -372,6 +632,7 @@ for i in range(46,50):
 
 
 # Candle
+
 for i in range(80,126):
 	for j in range(40,45):
 		image[i,j]=[1,.3,.4]
@@ -384,7 +645,12 @@ for i in range(75,85):
 
 for i in range(78,82):
 	for j in range(40,45):
-		image[i,j]=[1,1,0]
+		image[i,j]=[1,0,0]
+
+
+for i in range(70,85):
+	for j in range(35,50):
+		image[i,j]=(image[i+1,j]+image[i,j]+image[i-1,j]+image[i,j+1]+image[i,j-1]+image[i+1,j+1]+image[i-1,j-1]+image[i+1,j-1]+image[i-1,j+1])*1/9
 
 for x in range(0,10):
 	image[74,38+x]=[1,1,0]
@@ -419,7 +685,10 @@ for i in range(0,45):
 
 
 
-# Second painting-- Oranges ##################################### ##################################### #####################################
+# Second painting-- Oranges
+#####################################
+##################################### 
+#####################################
 
 for i in range(20,80):
 	image[130+i,390]=[1,1,1]
@@ -600,9 +869,32 @@ for z in range(0,3):
 
 
 
-#gaussianBlur = skimage.filters.gaussian(image,sigma=0.75)
+#gaussianBlur = skimage.filters.gaussian(image,sigma=1)
 #plt.imshow(gaussianBlur, interpolation='nearest')
 #plt.show()
+
+
+
+"""
+This is an interacrive history lesson called history quest with Scrooge Rouseau 
+ 
+"""
+
+
+
+
+
+"""
+for pixel in range
+
+
+
+"""
+
+
+
+
+
 
 
 plt.imshow(image, interpolation='nearest')
