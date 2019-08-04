@@ -30,27 +30,38 @@ for i in range(240,500):
 		sadMan[i,j]=[0,.3,0]
 
 
+# Making some random hills VVV
+makeCircle(50,[254,50],[0,.25,0],sadMan)
+makeEllipse(100,200,[300,300],[0,.25,0],sadMan)
+# Making some random hills ^^^
+
+
 # Making the lake in the park VVV
-makeEllipse(100,200,[350,250],[0,1,1],sadMan)
+makeEllipse(100,200,[350,250],[0,.7,.8],sadMan)
 # Making the lake in the park ^^^
+
 
 
 # Wave effects VVV
 for i in range(0,99):
 	if i%2==0:
-		makeEllipse(100-i,200-2*i,[350,250],[0,1,1],sadMan)
+		makeEllipse(100-i,200-2*i,[350,250],[0,.7,.8],sadMan)
 	else:
-		makeEllipse(100-i,200-2*i,[350,250],[0,.9,.9],sadMan)
+		makeEllipse(100-i,200-2*i,[350,250],[0,.6,.7],sadMan)
 
 for i in range(0,99):
 	if i%2==0:
-		makeEllipse(105-i,202-2*i,[352,253],[0,1,1],sadMan)
+		makeEllipse(105-i,202-2*i,[352,253],[0,.7,.8],sadMan)
 	else:
-		makeEllipse(105-i,202-2*i,[352,251],[0,.9,.9],sadMan)
-
+		makeEllipse(105-i,202-2*i,[352,251],[0,.6,.7],sadMan)
 # Wave effects ^^^
 
 
+# Small Dock VVV
+for i in range(0,30):
+	for j in range(0,50):
+		sadMan[340+i,50+j]=[0,.1,0]
+# Small Dock ^^^
 
 
 
@@ -87,30 +98,67 @@ makeEllipse(15,60,[79,379],[.9,.9,.9],sadMan)
 
 # Making some storm clouds ^^^
 
+# Gravel Path VVV
+lightEffect([500,350],10,1000,[.6,.6,.6],sadMan)
+lightEffect([490,369],10,1000,[.6,.6,.6],sadMan)
+lightEffect([472,385],10,1000,[.6,.6,.6],sadMan)
+lightEffect([443,418],10,1000,[.6,.6,.6],sadMan)
+lightEffect([443,418],10,1000,[.6,.6,.6],sadMan)
+lightEffect([455,418],10,1000,[.6,.6,.6],sadMan)
+lightEffect([414,459],10,1000,[.6,.6,.6],sadMan)
+lightEffect([414,459],10,1000,[.6,.6,.6],sadMan)
+lightEffect([405,492],10,1000,[.6,.6,.6],sadMan)
+# Gravel Path ^^^
+
+
+
 # Tree Section
+
+makeRect(30,2,[0,.2,0],[450,240],sadMan)
+for i in range(0,4):
+	for j in range(0,5):
+		sadMan[420-i-j,239+j]=[0,.2,0]
+for i in range(0,2):
+	for j in range(0,40):
+		sadMan[450+i,220+j]=[0,.2,0]
+for i in range(0,2):
+	for j in range(0,20):
+		sadMan[430+i,230+j]=[0,.2,0]
+		sadMan[445+i,230+j]=[0,.2,0]
+for i in range(0,2):
+	for j in range(0,10):
+		sadMan[445-j+i,240+j]=[0,.2,0]
+		sadMan[445-j+i,240-j]=[0,.2,0]
+		sadMan[460+j+i,240+j]=[0,.2,0]
+		sadMan[460+j+i,240-j]=[0,.2,0]
+
 
 makeRect(60,5,[0,.2,0],[325,30],sadMan)
 makeRect(3,30,[0,.2,0],[345,30],sadMan)
 makeRect(2,25,[0,.2,0],[325,30],sadMan)
 makeRect(2,15,[0,.2,0],[305,30],sadMan)
 makeRect(1,10,[0,.2,0],[285,30],sadMan)
+makeRect(30,2,[0,.2,0],[240,105],sadMan)
+
+lightEffect([220,100],3,100,[.85,.6,.6],sadMan)
+lightEffect([220,105],3,100,[.85,.6,.6],sadMan)
+lightEffect([220,110],3,100,[.85,.6,.6],sadMan)
+
+lightEffect([235,95],2,100,[.85,.6,.6],sadMan)
+lightEffect([235,100],2,100,[.85,.6,.6],sadMan)
+lightEffect([235,105],2,100,[.85,.6,.6],sadMan)
+lightEffect([235,110],2,100,[.85,.6,.6],sadMan)
+lightEffect([235,115],2,100,[.85,.6,.6],sadMan)
+lightEffect([242,110],2,100,[.85,.6,.6],sadMan)
+lightEffect([250,95],2,100,[.85,.6,.6],sadMan)
+lightEffect([250,100],2,100,[.85,.6,.6],sadMan)
+lightEffect([250,105],2,100,[.85,.6,.6],sadMan)
+lightEffect([250,110],2,100,[.85,.6,.6],sadMan)
+lightEffect([250,115],2,100,[.85,.6,.6],sadMan)
+lightEffect([250,120],2,100,[.85,.6,.6],sadMan)
 
 
-"""
-lightEffect([270,105],3,1000,[.85,.6,.6],sadMan)
-lightEffect([260,100],2,500,[.85,.6,.6],sadMan)
-lightEffect([260,95],1,100,[.85,.6,.6],sadMan)
-lightEffect([260,90],2,500,[.9,.64,.55],sadMan)
-lightEffect([250,85],1,100,[.9,.64,.55],sadMan)
-lightEffect([250,80],3,1000,[.9,.64,.55],sadMan)
-lightEffect([250,75],2,500,[.85,.6,.6],sadMan)
-lightEffect([235,70],1,100,[.9,.64,.55],sadMan)
-lightEffect([235,65],2,500,[.85,.6,.6],sadMan)
-lightEffect([235,60],1,100,[.9,.64,.55],sadMan)
-lightEffect([220,55],2,100,[.9,.64,.55],sadMan)
-lightEffect([220,50],2,100,[.85,.6,.6],sadMan)
-lightEffect([220,45],2,100,[.85,.6,.6],sadMan)
-"""
+
 
 
 lightEffect([345,30],8,1000,[0,.9,0],sadMan)
@@ -216,11 +264,41 @@ lightEffect([360,480],2,1000,[.2,.5,.3],sadMan)
 
 # Tree Section ^^
 
-# Black Crow VVV
+# Lake Grass Section VVV
+lightEffect([276,338],2,100,[0,.5,0],sadMan)
+lightEffect([270,345],2,100,[0,.5,0],sadMan)
+lightEffect([250,340],2,100,[0,.5,0],sadMan)
+lightEffect([280,325],2,100,[0,.5,0],sadMan)
+lightEffect([290,300],2,100,[0,.5,0],sadMan)
+lightEffect([290,310],2,100,[0,.5,0],sadMan)
+lightEffect([290,390],2,100,[0,.5,0],sadMan)
+lightEffect([270,300],2,100,[0,.5,0],sadMan)
+lightEffect([270,305],2,100,[0,.5,0],sadMan)
+lightEffect([270,310],2,100,[0,.5,0],sadMan)
+# Lake Grass Section ^^^
 
 
+# Ducks VVV
+equaliteralTriange(10,[350,350],[0,.2,0],sadMan)
+equaliteralTriange(10,[351,360],[0,.2,0],sadMan)
+equaliteralTriange(10,[348,370],[0,.2,0],sadMan)
+equaliteralTriange(10,[354,380],[0,.2,0],sadMan)
+makeCircle(3,[345,335],[.5,.3,.6],sadMan)
+equaliteralTriange(20,[351,330],[0,.2,0],sadMan)
+equaliteralTriange(10,[351,333],[0,0,1],sadMan)
+# Ducks ^^^
 
-# Black Crow ^^^
+# Flower Hill
+for i in range(0,7):
+	for j in range(0,10):
+		if (i%2==0 and j%2==1):
+			lightEffect([210+6*i,280+6*j],1,50,[0,0,.75],sadMan)
+		if i%2==1 and j%2==0:
+			lightEffect([210+6*i,280+6*j],1,50,[0,1,0],sadMan)
+		if i%2==1 and j%2==1:
+			lightEffect([210+6*i,280+6*j],1,50,[1,0,0],sadMan)
+
+
 
 
 
