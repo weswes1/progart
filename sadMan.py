@@ -288,7 +288,7 @@ equaliteralTriange(20,[351,330],[0,.2,0],sadMan)
 equaliteralTriange(10,[351,333],[0,0,1],sadMan)
 # Ducks ^^^
 
-# Flower Hill
+# Flower Hill VVV
 for i in range(0,7):
 	for j in range(0,10):
 		if (i%2==0 and j%2==1):
@@ -298,7 +298,7 @@ for i in range(0,7):
 		if i%2==1 and j%2==1:
 			lightEffect([210+6*i,280+6*j],1,50,[1,0,0],sadMan)
 
-
+# Flower Hill VVV
 
 
 
