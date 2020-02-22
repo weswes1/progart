@@ -645,21 +645,22 @@ for i in range(75,85):
 
 for i in range(78,82):
 	for j in range(40,45):
-		image[i,j]=[1,0,0]
+		image[i,j]=[1,1,0]
 
 
-for i in range(70,85):
-	for j in range(35,50):
-		image[i,j]=(image[i+1,j]+image[i,j]+image[i-1,j]+image[i,j+1]+image[i,j-1]+image[i+1,j+1]+image[i-1,j-1]+image[i+1,j-1]+image[i-1,j+1])*1/9
+
 
 for x in range(0,10):
 	image[74,38+x]=[1,1,0]
+	image[84,38+x]=[1,1,0]
 
 for x in range(0,8):
 	image[73,39+x]=[1,1,0]
+	image[85,39+x]=[1,1,0]
 
 for x in range(0,3):
 	image[72,42+x]=[1,1,0]
+	image[86,41+x]=[1,1,0]
 
 
 # Lantern glass effect
@@ -868,6 +869,21 @@ for z in range(0,3):
 
 
 
+# FILTERING section
+
+
+"""
+
+for i in range(1,499):
+		for j in range(1,499):
+			image[i,j]=(image[i+1,j]+image[i,j]+image[i-1,j]+image[i,j+1]+image[i,j-1]+image[i+1,j+1]+image[i-1,j-1]+image[i+1,j-1]+image[i-1,j+1])*1/9
+for z in range(0,4):
+	for i in range(70,87):
+		for j in range(35,50):
+			image[i,j]=(image[i+1,j]+image[i,j]+image[i-1,j]+image[i,j+1]+image[i,j-1]+image[i+1,j+1]+image[i-1,j-1]+image[i+1,j-1]+image[i-1,j+1])*1/9
+
+
+
 
 #gaussianBlur = skimage.filters.gaussian(image,sigma=1)
 #plt.imshow(gaussianBlur, interpolation='nearest')
@@ -875,8 +891,9 @@ for z in range(0,3):
 
 
 
-"""
-This is an interacrive history lesson called history quest with Scrooge Rouseau 
+This is an interacrive history lesson called history quest with Peter Rouseau. Peter Rouseau is an arts affecionado and studied 
+the Heian period of Japan for many years. The scroll you see on the wall of his room was a result of his attempt at japanese calligrpahy.
+Recently, he has spent a lot of time decoding and stu
  
 """
 
